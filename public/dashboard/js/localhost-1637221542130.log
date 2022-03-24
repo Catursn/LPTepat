@@ -1,0 +1,62 @@
+jquery.flot.js:32 
+        
+       Uncaught ReferenceError: jQuery is not defined
+    at jquery.flot.js:32
+(anonymous) @ jquery.flot.js:32
+jquery.flot.pie.min.js:7 
+        
+       Uncaught ReferenceError: jQuery is not defined
+    at jquery.flot.pie.min.js:7
+(anonymous) @ jquery.flot.pie.min.js:7
+jquery.flot.spline.min.js:1 
+        
+       Uncaught ReferenceError: jQuery is not defined
+    at jquery.flot.spline.min.js:1
+(anonymous) @ jquery.flot.spline.min.js:1
+jquery.simpleWeather.min.js:2 
+        
+       Uncaught ReferenceError: jQuery is not defined
+    at jquery.simpleWeather.min.js:2
+(anonymous) @ jquery.simpleWeather.min.js:2
+dashboard:421 
+        
+       GET http://localhost:8000/assets/js/init/weather-init.js net::ERR_ABORTED 404 (Not Found)
+fullcalendar.min.js:6 
+        
+       Uncaught TypeError: Cannot read properties of undefined (reading 'extend')
+    at Object.<anonymous> (fullcalendar.min.js:6)
+    at e (fullcalendar.min.js:6)
+    at Object.<anonymous> (fullcalendar.min.js:8)
+    at e (fullcalendar.min.js:6)
+    at Object.<anonymous> (fullcalendar.min.js:6)
+    at e (fullcalendar.min.js:6)
+    at Object.<anonymous> (fullcalendar.min.js:11)
+    at e (fullcalendar.min.js:6)
+    at fullcalendar.min.js:6
+    at fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:6
+e @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:8
+e @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:6
+e @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:11
+e @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:6
+(anonymous) @ fullcalendar.min.js:6
+dashboard:425 
+        
+       GET http://localhost:8000/assets/js/init/fullcalendar-init.js net::ERR_ABORTED 404 (Not Found)
+dashboard:429 
+        
+       Uncaught ReferenceError: jQuery is not defined
+    at dashboard:429
+(anonymous) @ dashboard:429
+pe-icon-7-stroke.min.css:1 
+        
+       GET http://localhost:8000/fonts/Pe-icon-7-stroke.woff?d7yf1v net::ERR_ABORTED 404 (Not Found)
+pe-icon-7-stroke.min.css:1 
+        
+       GET http://localhost:8000/fonts/Pe-icon-7-stroke.ttf?d7yf1v net::ERR_ABORTED 404 (Not Found)

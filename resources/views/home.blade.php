@@ -25,14 +25,14 @@
             <div id="sticky-header" class="main-header-area">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
+                        <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
                                 <a href="index.html">
                                     <img src="img/iconpanjang.png" alt="">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-9 col-lg-9">
+                        <div class="col-xl-9 col-lg-9 col-md-9">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
@@ -52,17 +52,19 @@
         </div>
     </header>
     <!-- slider_area_start -->
+    @foreach($banner as $ban)
     <div class="slider_area">
-        <div class="single_slider slider_bg_1 d-flex align-items-center">
+        <div class="single_slider slider_bg_1 d-flex align-items-center" style="background-image: url(..{{$ban->foto}});">
             <div class="container">
                 <div class="right">
                     <div class="slider_text">
-                        <h3>Sekali Klik <br> Semua Bisa</h3>
+                        <h3><?php echo $ban->caption; ?></h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
     <!-- slider_area_end -->
     <!-- service_area_start  -->
     <div class="service_area">
@@ -77,54 +79,20 @@
                 </div>
             </div>
             <div class="row justify-content-center">
+                @foreach($benefit as $ben)
                 <div class="col-lg-3 col-md-6">
                     <div class="single_service">
                          <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
                              <div class="service_icon">
-                                 <img src="img/murah.png" alt="">
+                                 <img src="{{$ben->foto}}" alt="">
                              </div>
                          </div>
                          <div class="service_content text-center">
-                            <h3>Murah dan Terjangkau</h3>
+                            <h3>{{$ben->caption}}</h3>
                          </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
-                             <div class="service_icon">
-                                 <img src="img/user.png" alt="">
-                             </div>
-                         </div>
-                         <div class="service_content text-center">
-                            <h3>User Friendly</h3>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
-                             <div class="service_icon">
-                                 <img src="img/dinamis.png" alt="">
-                             </div>
-                         </div>
-                         <div class="service_content text-center">
-                            <h3>Dinamis</h3>
-                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single_service">
-                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
-                             <div class="service_icon">
-                                 <img src="img/kustomisasi.png" alt="">
-                             </div>
-                         </div>
-                         <div class="service_content text-center">
-                            <h3>kustomisasi</h3>
-                         </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -136,50 +104,13 @@
             </div>
             <div class="contact_btn align-items-center justify-content-center">
                 <div class="row media">
+                    @foreach($feature as $feat)
                     <div class="col-lg-4 text-center">
                         <div class="box">
-                            <h2 class="whitetext">Web Backend Admin dan Pencatatan Transaksi</h2>
+                            <h2 class="whitetext">{{$feat->feature}}</h2>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">Integerasi Karyawan berikut Absensinya</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">Mobile App Kurir dan Pegawai</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row media align-items-center">
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">Profile dan Pencarian</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">Integrasi dengan Google Maps</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="box text-center">
-                            <h2 class="whitetext">Integrasi WA</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row media">
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">Integrasi Bukti Foto dan Penerimaan Barang</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">Hak Akses User bisa di Customize</h2>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -231,21 +162,11 @@
                 <div class="client">
                     <h2>Client</h2>
                     <div class="row text-center">
+                        @foreach($client as $cli)
                         <div class="col-20">
-                            <img src="img/j&t.png" alt="">
+                            <img src="{{$cli->foto}}" alt="">
                         </div>
-                        <div class="col-20">
-                            <img src="img/shopee.png" alt="">
-                        </div>
-                        <div class="col-20">
-                            <img src="img/pos.png" alt="">
-                        </div>
-                        <div class="col-20">
-                            <img src="img/jne.png" alt="">
-                        </div>
-                        <div class="col-20">
-                            <img src="img/standard.png" alt="">
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -253,8 +174,10 @@
     </div>
     <div class="testi">
         <div class="content text-center">
-            <h1>“Dengan memakai aplikasi Tepat, bisnis saya semakin lancar dan aman”</h1>
-            <p>Samsul Arifin (30), CEO Surya Logistik</p>
+            @foreach($testimoni as $test)
+            <h1>“{{$test->testi}}”</h1>
+            <p>{{$test->nama}}, {{$test->perusahaan}}</p>
+            @endforeach
         </div>
     </div>
     <div class="footer">
