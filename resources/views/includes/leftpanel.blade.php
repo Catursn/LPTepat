@@ -42,6 +42,10 @@
                             <li><i class="fa fa-table"></i><a href="{{route('testimoni.create')}}">Add</a></li>
                         </ul>
                     </li>
+                    <li class="menu-title">User</li><!-- /.menu-title -->
+                    <li class="menu-item">
+                        <a href="{{route('form.index')}}" > <i class="menu-icon fa fa-table"></i>Form</a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

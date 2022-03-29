@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Banner;
-use App\Benefit;
-use App\Client;
-use App\Feature;
-use App\Testimoni;
 use App\Form;
 
-class FrontController extends Controller
+class FormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,30 +14,33 @@ class FrontController extends Controller
      */
     public function index()
     {
-        $banner = Banner::orderBy('id_banners')->take(1)->get();
-        $benefit = Benefit::orderBy('id_benefits')->take(4)->get();
-        $client = Client::orderBy('id_clients','DESC')->take(5)->get();
-        $feature = Feature::orderBy('id_features')->take(9)->get();
-        $testimoni = Testimoni::orderBy('id_testimonis')->take(1)->get();
-        // dd($client);
-        return view('home',compact('banner','benefit','client','feature','testimoni'));
+        $form = Form::orderBy('id_forms','DESC')->get();
+        return view('form.index',compact('form'));
     }
 
-    public function form(){
-        return view('form');
-    }
-    public function submit(Request $request){
-        $form = new Form;
-        $data = $request->all();
-        $status=$form->fill($data)->save();
-        if($status){
-            request()->session()->flash('success','Pesan successfully created');
+    public function data(){
+        $form = Form::orderBy('id_forms','DESC')->get();
+        $no = 0;
+        $data = array();
+        foreach($form as $list){
+            $no ++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $list->nama;
+            $row[] = $list->wa;
+            $row[] = $list->email;
+            $row[] = $list->perusahaan;
+            $row[] = $list->pesan;
+            $row[] = '<div class="btn-group">
+                <a href="/admin/form/'.$list->id_forms.'" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                <button class="btn btn-danger" data-catid='.$list->id_forms.' data-toggle="modal" data-target="#delete'.$list->id_forms.'"><i class="fa fa-trash"></i></button>
+                </div>';
+            $data[] = $row;
         }
-        else{
-            request()->session()->flash('error','Eror while created pesan');
-        }
-        return back();
+        $output = array("data" => $data);
+        return response()->json($output);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -72,7 +70,8 @@ class FrontController extends Controller
      */
     public function show($id)
     {
-        //
+        $form = Form::find($id);
+        return view('form.detail',compact('form'));
     }
 
     /**
@@ -106,6 +105,13 @@ class FrontController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $status = form::find($id)->delete();
+        if($status){
+            request()->session()->flash('success','Data form successfully deleted');
+        }
+        else{
+            request()->session()->flash('error','Eror while deleted data form');
+        }
+        return redirect()->route('form.index');
     }
 }

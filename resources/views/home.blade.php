@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -66,13 +67,17 @@
     </div>
     @endforeach
     <!-- slider_area_end -->
+    <!-- WA -->
+    <div class="wa align-items-center">
+        <a href="https://wa.me/6281323268184?text=Ada%20yang%20ingin%20saya%20tanyakan%20tentang%20produk%20anda" target="__blank"><img src="/img/wa.png" alt=""></a>
+    </div>
     <!-- service_area_start  -->
     <div class="service_area">
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-lg-3 col-md-10 ">
                     <div class="text-center">
-                        <div class="box">
+                        <div class="box align-items-center">
                             <h1>BENEFIT</h1>
                         </div>
                     </div>
@@ -99,15 +104,20 @@
     <!-- service_area_end -->
     <div class="contact_anipat anipat_bg_1">
         <div class="container">
-            <div class="section_title">
-                <h3>Feature</h3>
+            <div class="section_title text-center">
+                <h1>Feature</h1>
             </div>
             <div class="contact_btn align-items-center justify-content-center">
                 <div class="row media">
                     @foreach($feature as $feat)
-                    <div class="col-lg-4 text-center">
-                        <div class="box">
-                            <h2 class="whitetext">{{$feat->feature}}</h2>
+                    <div class="col-lg-4">
+                        <div class="row">
+                            <div class="col-1">
+                                <h2><i class="fa fa-check"></i></h2>
+                            </div>
+                            <div class="col-10">
+                                <h2 class="whitetext">{{$feat->feature}}</h2>
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -128,7 +138,7 @@
                             <img src="img/worker.png" alt="">
                             <h2>Coba Gratis</h2>
                             <h3>Akses seluruh fitur TEPAT by Jagad Creative selama 30 hari tanpa biaya apapun</h3>
-                            <a href="#">Coba Gratis</a>
+                            <a href="https://wa.me/6281323268184?text=Saya%20ingin%20mencoba%20produk%20anda" target="__blank">Coba Gratis</a>
                         </div>
                     </div>
                     <div class="kanan col-50">
@@ -136,7 +146,7 @@
                             <img src="img/demo.png" alt="">
                             <h2>Jadwalkan Demo</h2>
                             <h3>Jadwalkan sesi demo dan konsultasikan kebutuhan anda langsung dengan customer service kami</h3>
-                            <a href="#">Coba Gratis</a>
+                            <a href="/form">Coba Gratis</a>
                         </div>
                     </div>
                 </div>
@@ -199,9 +209,9 @@
                         </div>
                     </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-30">
+                <!-- <br> -->
+                <!-- <div class="row">
+                    <div class="">
                         <div class="isi align-items-center">
                             <a href="#"><i class="fa fa-question-circle"></i> Bantuan</a>
                         </div>
@@ -212,15 +222,15 @@
                             <a href="#"><i class="fa fa-language"></i> Bahasa Indonesia</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="bottom">
                     <div class="row">
                         <div class="col-3">
                             <div class="sosmed">
-                                <img src="img/fb.png" alt="">
-                                <img src="img/wa.png" alt="">
-                                <img src="img/ig.png" alt="">
-                                <img src="img/tw.png" alt="">
+                                <a href="https://www.facebook.com/jagadcreative" ><img src="img/fb.png" alt=""></a>
+                                <a href="https://wa.me/6281323268184?text=Ada%20yang%20ingin%20saya%20tanyakan%20tentang%20produk%20anda" target="__blank"><img src="img/wa.png" alt=""></a>
+                                <a href="https://www.instagram.com/jagadcreative.id/" target="__blank"><img src="img/ig.png" alt=""></a>
+                                <a href="https://www.youtube.com/watch?v=9azl34-6PH0" target="__blank"><img src="img/youtube.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-6 text-center">

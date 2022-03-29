@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontController@index')->name('home');
+Route::get('/form','FrontController@form');
+Route::post('/form/submit','FrontController@submit');
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/login/store','AuthController@LoginSubmit')->name('login.store');
 Route::get('/register','AuthController@register')->name('register');
@@ -44,4 +46,8 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth']],function(){
     Route::get('testimoni/delete/{id}', 'TestimoniController@destroy')->name('testimoni.delete');
     Route::get('testimoni/data', 'TestimoniController@Data')->name('testimoni.data');
     Route::resource('testimoni','TestimoniController');
+
+    Route::get('form/delete/{id}', 'FormController@destroy')->name('form.delete');
+    Route::get('form/data', 'FormController@Data')->name('form.data');
+    Route::resource('form','FormController');
 });
